@@ -14,9 +14,8 @@ Quadrant sign rules (All Students Take Calculus)
 Quick-reference summary
 
 Live Site
-View it here → yourusername.github.io/trig-sheet
+View it here → BranchedGT.github.io/trig-sheet
 
-Replace the link above with your actual GitHub Pages URL once it's live.
 
 About This Project
 This project was created for two courses:
