@@ -14,7 +14,7 @@ Quadrant sign rules (All Students Take Calculus)
 Quick-reference summary
 
 Live Site
-View it here → BranchedGT.github.io/trig-sheet
+View it here → BranchedGT.github.io/Trig-Equation-Sheet/
 
 
 About This Project
