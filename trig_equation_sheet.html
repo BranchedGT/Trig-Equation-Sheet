@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trig Ch.1 & 2 — Equation Sheet</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:    #0f1e3c;
+    --teal:    #0a9396;
+    --teal2:   #94d2bd;
+    --gold:    #e9c46a;
+    --coral:   #e76f51;
+    --purple:  #7b2d8b;
+    --mint-bg: #edf6f9;
+    --cream:   #faf8f3;
+    --card-bg: #ffffff;
+    --border:  #dde3ea;
+    --text:    #1a2233;
+    --muted:   #6b7a90;
+    --shadow:  0 4px 24px rgba(15,30,60,0.08);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ─────────────────────────────────────────── */
+  header {
+    background: var(--navy);
+    padding: 3rem 2rem 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(10,147,150,0.18) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(123,45,139,0.15) 0%, transparent 55%);
+  }
+  header::after {
+    content: 'sin cos tan';
+    position: absolute;
+    bottom: -12px; right: 2rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 4rem;
+    color: rgba(255,255,255,0.04);
+    letter-spacing: 0.3em;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+  header .eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--teal2);
+    margin-bottom: 0.75rem;
+    position: relative;
+  }
+  header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    color: #fff;
+    line-height: 1.15;
+    position: relative;
+  }
+  header h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+  header .subtitle {
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.55);
+    font-weight: 300;
+    position: relative;
+  }
+  .header-chips {
+    display: flex; flex-wrap: wrap; gap: 0.5rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+    position: relative;
+  }
+  .chip {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.75);
+    border-radius: 999px;
+    padding: 0.3rem 0.9rem;
+    font-size: 0.78rem;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.04em;
+    cursor: default;
+    transition: background 0.2s;
+  }
+  .chip:hover { background: rgba(255,255,255,0.15); }
+
+  /* ── NAV BAR ─────────────────────────────────────────── */
+  nav {
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 2px 12px rgba(15,30,60,0.06);
+  }
+  .nav-inner {
+    max-width: 960px; margin: 0 auto;
+    display: flex; gap: 0; overflow-x: auto;
+  }
+  .nav-inner a {
+    flex-shrink: 0;
+    padding: 0.85rem 1.2rem;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+    white-space: nowrap;
+  }
+  .nav-inner a:hover { color: var(--teal); border-color: var(--teal); }
+
+  /* ── LAYOUT ─────────────────────────────────────────── */
+  main {
+    max-width: 960px; margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+  }
+
+  /* ── CHAPTER HEADING ─────────────────────────────────── */
+  .ch-heading {
+    display: flex; align-items: center; gap: 1rem;
+    margin: 2.5rem 0 1.2rem;
+    scroll-margin-top: 60px;
+  }
+  .ch-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .ch-badge.ch1 { background: rgba(10,147,150,0.12); color: var(--teal); }
+  .ch-badge.ch2 { background: rgba(123,45,139,0.1); color: var(--purple); }
+  .ch-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.55rem;
+    color: var(--navy);
+    border-left: 3px solid var(--teal);
+    padding-left: 0.9rem;
+  }
+  .ch-title.purple { border-color: var(--purple); }
+
+  /* ── SECTION CARD ────────────────────────────────────── */
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1.2rem;
+    box-shadow: var(--shadow);
+    animation: fadeUp 0.4s ease both;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .card-header {
+    padding: 0.7rem 1.2rem;
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+  .card-header.teal  { background: linear-gradient(90deg, rgba(10,147,150,0.1), transparent); border-bottom: 1px solid rgba(10,147,150,0.2); }
+  .card-header.gold  { background: linear-gradient(90deg, rgba(233,196,106,0.12), transparent); border-bottom: 1px solid rgba(233,196,106,0.25); }
+  .card-header.purple{ background: linear-gradient(90deg, rgba(123,45,139,0.1), transparent); border-bottom: 1px solid rgba(123,45,139,0.2); }
+  .card-header.coral { background: linear-gradient(90deg, rgba(231,111,81,0.1), transparent); border-bottom: 1px solid rgba(231,111,81,0.2); }
+  .card-icon { font-size: 1.1rem; }
+  .card-title {
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--navy);
+  }
+  .card-body { padding: 1rem 1.2rem; }
+
+  /* ── EQUATION ROWS ───────────────────────────────────── */
+  .eq-row {
+    display: grid;
+    grid-template-columns: minmax(140px, 200px) 1fr;
+    gap: 0.3rem 1rem;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid #f0f2f6;
+    align-items: center;
+  }
+  .eq-row:last-child { border-bottom: none; }
+  .eq-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .eq-formula {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.92rem;
+    color: var(--navy);
+    font-weight: 500;
+  }
+  .eq-formula .hl { color: var(--teal); font-weight: 700; }
+  .eq-formula .hl-p { color: var(--purple); font-weight: 700; }
+
+  /* ── UNIT CIRCLE TABLE ───────────────────────────────── */
+  .uc-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+  }
+  .uc-table th {
+    background: var(--navy);
+    color: #fff;
+    padding: 0.6rem 0.8rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-align: center;
+  }
+  .uc-table td {
+    padding: 0.5rem 0.8rem;
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.82rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+  }
+  .uc-table tr:nth-child(even) td { background: #f7f9fc; }
+  .uc-table tr:last-child td { border-bottom: none; }
+  .uc-table td.angle { font-weight: 600; color: var(--navy); }
+  .uc-table td.und { color: var(--coral); font-style: italic; }
+
+  /* ── EXAMPLE BOX ─────────────────────────────────────── */
+  .example {
+    background: linear-gradient(135deg, #edf9f6 0%, #f3f7ff 100%);
+    border: 1px solid rgba(10,147,150,0.2);
+    border-left: 4px solid var(--teal);
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.2rem;
+    margin-top: 0.8rem;
+  }
+  .example-label {
+    font-size: 0.72rem;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .example-step {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .example-step .given { color: var(--purple); font-weight: 500; }
+  .example-step .result { color: var(--teal); font-weight: 600; }
+  .example-step .check { color: #27ae60; }
+
+  /* ── PYTHAGOREAN HIGHLIGHT BOX ───────────────────────── */
+  .py-identity {
+    background: linear-gradient(135deg, #fff8ec, #fef6e4);
+    border: 1px solid rgba(233,196,106,0.4);
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.92rem;
+    color: var(--navy);
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+  .py-identity::before {
+    content: '≡';
+    color: var(--gold);
+    font-size: 1.1rem;
+  }
+
+  /* ── SUMMARY TABLE ───────────────────────────────────── */
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 0.8rem;
+  }
+  .summary-item {
+    background: var(--navy);
+    border-radius: 10px;
+    padding: 1rem 1.1rem;
+    color: #fff;
+  }
+  .summary-item-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--teal2);
+    margin-bottom: 0.5rem;
+  }
+  .summary-item-eqs {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.75;
+  }
+  .summary-item-eqs span { color: var(--gold); font-weight: 500; }
+
+  /* ── ASTC BOX ────────────────────────────────────────── */
+  .astc-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1px; background: var(--border);
+    border-radius: 10px; overflow: hidden;
+    margin-top: 0.6rem;
+  }
+  .astc-cell {
+    background: var(--card-bg);
+    padding: 1rem;
+    text-align: center;
+  }
+  .astc-cell .q-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.3rem;
+  }
+  .astc-cell .q-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem;
+    margin-bottom: 0.2rem;
+  }
+  .astc-cell .q-pos {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+  .q1 .q-name { color: #27ae60; }
+  .q2 .q-name { color: var(--teal); }
+  .q3 .q-name { color: var(--coral); }
+  .q4 .q-name { color: var(--purple); }
+
+  /* ── FOOTER ──────────────────────────────────────────── */
+  footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.78rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    font-family: 'DM Mono', monospace;
+  }
+
+  @media (max-width: 600px) {
+    .eq-row { grid-template-columns: 1fr; }
+    .eq-label { font-size: 0.72rem; color: var(--teal); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══════════════════════════════════════════════════════════════ -->
+<header>
+  <p class="eyebrow">Trigonometry · Chapters 1 &amp; 2</p>
+  <h1>Equation &amp; <em>Identity</em> Sheet</h1>
+  <p class="subtitle">All core formulas with worked examples for reciprocal, quotient &amp; Pythagorean identities</p>
+  <div class="header-chips">
+    <span class="chip">Angle Conversions</span>
+    <span class="chip">SOH-CAH-TOA</span>
+    <span class="chip">Unit Circle</span>
+    <span class="chip">Reciprocal Ids</span>
+    <span class="chip">Quotient Ids</span>
+    <span class="chip">Pythagorean Ids</span>
+    <span class="chip">Even/Odd</span>
+    <span class="chip">Co-functions</span>
+  </div>
+</header>
+
+<!-- ═══ NAV ═══════════════════════════════════════════════════════════════════ -->
+<nav>
+  <div class="nav-inner">
+    <a href="#conversions">Conversions</a>
+    <a href="#arc">Arc &amp; Area</a>
+    <a href="#soah">SOH-CAH-TOA</a>
+    <a href="#unitcircle">Unit Circle</a>
+    <a href="#reciprocal">Reciprocal</a>
+    <a href="#quotient">Quotient</a>
+    <a href="#pythagorean">Pythagorean</a>
+    <a href="#evenodd">Even/Odd</a>
+    <a href="#cofunction">Co-function</a>
+    <a href="#summary">Summary</a>
+  </div>
+</nav>
+
+<!-- ═══ MAIN ══════════════════════════════════════════════════════════════════ -->
+<main>
+
+  <!-- ── CHAPTER 1 ─────────────────────────────────────────────────────────── -->
+  <div class="ch-heading" id="ch1">
+    <span class="ch-badge ch1">Chapter 1</span>
+    <h2 class="ch-title">Foundations of Trigonometry</h2>
+  </div>
+
+  <!-- Angle Conversions -->
+  <div class="card" id="conversions">
+    <div class="card-header teal">
+      <span class="card-icon">🔄</span>
+      <span class="card-title">Angle Conversions</span>
+    </div>
+    <div class="card-body">
+      <div class="eq-row">
+        <span class="eq-label">Degrees → Radians</span>
+        <span class="eq-formula">rad = deg × <span class="hl">(π / 180)</span></span>
+      </div>
+      <div class="eq-row">
+        <span class="eq-label">Radians → Degrees</span>
+        <span class="eq-formula">deg = rad × <span class="hl">(180 / π)</span></span>
+      </div>
+      <div class="eq-row">
+        <span class="eq-label">One full rotation</span>
+        <span class="eq-formula">360° = <span class="hl">2π</span> radians</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Arc Length & Sector -->
+  <div class="card" id="arc">
+    <div class="card-header teal">
+      <span class="card-icon">📏</span>
+      <span class="card-title">Arc Length, Sector Area &amp; Speed</span>
+    </div>
+    <div class="card-body">
+      <div class="eq-row">
+        <span class="eq-label">Arc Length</span>
+        <span class="eq-formula"><span class="hl">s</span> = r · θ &nbsp;&nbsp;&nbsp;<span style="color:var(--muted);font-size:0.78rem;">(θ in radians)</span></span>
+      </div>
+      <div class="eq-row">
+        <span class="eq-label">Sector Area</span>
+        <span class="eq-formula"><span class="hl">A</span> = ½ r² θ &nbsp;&nbsp;&nbsp;<span style="color:var(--muted);font-size:0.78rem;">(θ in radians)</span></span>
+      </div>
+      <div class="eq-row">
+        <span class="eq-label">Linear Speed</span>
+        <span class="eq-formula"><span class="hl">v</span> = r · ω &nbsp;&nbsp;&nbsp;<span style="color:var(--muted);font-size:0.78rem;">(ω = angular speed, rad/s)</span></span>
+      </div>
+      <div class="eq-row">
+        <span class="eq-label">Angular Speed</span>
+        <span class="eq-formula"><span class="hl">ω</span> = θ / t</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOH-CAH-TOA -->
+  <div class="card" id="soah">
+    <div class="card-header gold">
+      <span class="card-icon">📐</span>
+      <span class="card-title">Right-Triangle Trigonometry — SOH CAH TOA</span>
+    </div>
+    <div class="card-body">
+      <div class="eq-row">
+        <span class="eq-label">sin θ</span>
+        <span class="eq-formula">= <span class="hl">Opposite</span> / Hypotenuse</span>
+      </div>
+      <div class="eq-row">
+        <span class="eq-label">cos θ</span>
+        <span class="eq-formula">= <span class="hl">Adjacent</span> / Hypotenuse</span>
+      </div>
+      <div class="eq-row">
+        <span class="eq-label">tan θ</span>
+        <span class="eq-formula">= <span class="hl">Opposite</span> / Adjacent</span>
+      </div>
+      <div class="eq-row">
+        <span class="eq-label">csc θ</span>
+        <span class="eq-formula">= Hypotenuse / <span class="hl">Opposite</span> &nbsp;&nbsp;&nbsp;<span style="color:var(--muted);font-size:0.78rem;">(reciprocal of sin)</span></span>
+      </div>
+      <div class="eq-row">
+        <span class="eq-label">sec θ</span>
+        <span class="eq-formula">= Hypotenuse / <span class="hl">Adjacent</span> &nbsp;&nbsp;&nbsp;<span style="color:var(--muted);font-size:0.78rem;">(reciprocal of cos)</span></span>
+      </div>
+      <div class="eq-row">
+        <span class="eq-label">cot θ</span>
+        <span class="eq-formula">= Adjacent / <span class="hl">Opposite</span> &nbsp;&nbsp;&nbsp;<span style="color:var(--muted);font-size:0.78rem;">(reciprocal of tan)</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Unit Circle -->
+  <div class="card" id="unitcircle">
+    <div class="card-header teal">
+      <span class="card-icon">⭕</span>
+      <span class="card-title">Unit Circle — Key Values &nbsp;&nbsp;<span style="font-weight:400;color:var(--muted)">(x = cos θ, y = sin θ)</span></span>
+    </div>
+    <div class="card-body" style="padding:0; overflow-x:auto;">
+      <table class="uc-table">
+        <thead>
+          <tr><th>θ (°)</th><th>θ (rad)</th><th>sin θ</th><th>cos θ</th><th>tan θ</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="angle">0°</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+          <tr><td class="angle">30°</td><td>π/6</td><td>1/2</td><td>√3/2</td><td>√3/3</td></tr>
+          <tr><td class="angle">45°</td><td>π/4</td><td>√2/2</td><td>√2/2</td><td>1</td></tr>
+          <tr><td class="angle">60°</td><td>π/3</td><td>√3/2</td><td>1/2</td><td>√3</td></tr>
+          <tr><td class="angle">90°</td><td>π/2</td><td>1</td><td>0</td><td class="und">undefined</td></tr>
+          <tr><td class="angle">120°</td><td>2π/3</td><td>√3/2</td><td>−1/2</td><td>−√3</td></tr>
+          <tr><td class="angle">135°</td><td>3π/4</td><td>√2/2</td><td>−√2/2</td><td>−1</td></tr>
+          <tr><td class="angle">150°</td><td>5π/6</td><td>1/2</td><td>−√3/2</td><td>−√3/3</td></tr>
+          <tr><td class="angle">180°</td><td>π</td><td>0</td><td>−1</td><td>0</td></tr>
+          <tr><td class="angle">270°</td><td>3π/2</td><td>−1</td><td>0</td><td class="und">undefined</td></tr>
+          <tr><td class="angle">360°</td><td>2π</td><td>0</td><td>1</td><td>0</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ── CHAPTER 2 ─────────────────────────────────────────────────────────── -->
+  <div class="ch-heading" id="ch2" style="margin-top:3rem;">
+    <span class="ch-badge ch2">Chapter 2</span>
+    <h2 class="ch-title purple">Trigonometric Identities</h2>
+  </div>
+
+  <!-- Reciprocal -->
+  <div class="card" id="reciprocal">
+    <div class="card-header purple">
+      <span class="card-icon">🔁</span>
+      <span class="card-title">Reciprocal Identities</span>
+    </div>
+    <div class="card-body">
+      <div class="eq-row">
+        <span class="eq-label">csc θ</span>
+        <span class="eq-formula">= <span class="hl-p">1 / sin θ</span> &nbsp;&nbsp;&nbsp;→&nbsp;&nbsp;&nbsp; sin θ · csc θ = 1</span>
+      </div>
+      <div class="eq-row">
+        <span class="eq-label">sec θ</span>
+        <span class="eq-formula">= <span class="hl-p">1 / cos θ</span> &nbsp;&nbsp;&nbsp;→&nbsp;&nbsp;&nbsp; cos θ · sec θ = 1</span>
+      </div>
+      <div class="eq-row">
+        <span class="eq-label">cot θ</span>
+        <span class="eq-formula">= <span class="hl-p">1 / tan θ</span> &nbsp;&nbsp;&nbsp;→&nbsp;&nbsp;&nbsp; tan θ · cot θ = 1</span>
+      </div>
+
+      <div class="example">
+        <p class="example-label">✏️ Worked Example</p>
+        <div class="example-step">
+          <span class="given">Given:</span> sin θ = 3/5 &nbsp;—&nbsp; Find csc θ<br>
+          csc θ = 1 / sin θ = 1 / (3/5) = <span class="result">5/3</span><br>
+          <span class="check">Check: sin θ · csc θ = (3/5)(5/3) = 1 ✓</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quotient -->
+  <div class="card" id="quotient">
+    <div class="card-header purple">
+      <span class="card-icon">➗</span>
+      <span class="card-title">Quotient Identities</span>
+    </div>
+    <div class="card-body">
+      <div class="eq-row">
+        <span class="eq-label">tan θ</span>
+        <span class="eq-formula">= <span class="hl-p">sin θ / cos θ</span></span>
+      </div>
+      <div class="eq-row">
+        <span class="eq-label">cot θ</span>
+        <span class="eq-formula">= <span class="hl-p">cos θ / sin θ</span></span>
+      </div>
+
+      <div class="example">
+        <p class="example-label">✏️ Worked Example</p>
+        <div class="example-step">
+          <span class="given">Given:</span> sin θ = 4/5, &nbsp;cos θ = 3/5<br>
+          tan θ = sin θ / cos θ = (4/5) / (3/5) = <span class="result">4/3</span><br>
+          cot θ = cos θ / sin θ = (3/5) / (4/5) = <span class="result">3/4</span><br>
+          <span class="check">Notice: tan θ · cot θ = (4/3)(3/4) = 1 ✓ (reciprocal pair)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pythagorean -->
+  <div class="card" id="pythagorean">
+    <div class="card-header gold">
+      <span class="card-icon">🔺</span>
+      <span class="card-title">Pythagorean Identities</span>
+    </div>
+    <div class="card-body">
+      <div class="py-identity">sin²θ + cos²θ = 1 &nbsp;&nbsp;&nbsp;<span style="color:var(--muted);font-size:0.8rem;font-family:'Outfit',sans-serif;">← Primary identity</span></div>
+      <div class="py-identity">1 + tan²θ = sec²θ &nbsp;&nbsp;&nbsp;<span style="color:var(--muted);font-size:0.8rem;font-family:'Outfit',sans-serif;">→ tan²θ = sec²θ − 1</span></div>
+      <div class="py-identity">1 + cot²θ = csc²θ &nbsp;&nbsp;&nbsp;<span style="color:var(--muted);font-size:0.8rem;font-family:'Outfit',sans-serif;">→ cot²θ = csc²θ − 1</span></div>
+
+      <div class="example">
+        <p class="example-label">✏️ Worked Example</p>
+        <div class="example-step">
+          <span class="given">Given:</span> sin θ = 5/13, Quadrant I &nbsp;—&nbsp; Find cos θ<br><br>
+          sin²θ + cos²θ = 1<br>
+          (5/13)² + cos²θ = 1<br>
+          25/169 + cos²θ = 1<br>
+          cos²θ = 144/169<br>
+          cos θ = <span class="result">12/13</span><br><br>
+          <span class="given">Verify derived identity:</span> &nbsp;1 + tan²θ = sec²θ<br>
+          tan θ = 5/12, &nbsp;sec θ = 13/12<br>
+          1 + (5/12)² = 1 + 25/144 = 169/144<br>
+          (13/12)² = 169/144 &nbsp;<span class="check">✓</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Even / Odd -->
+  <div class="card" id="evenodd">
+    <div class="card-header coral">
+      <span class="card-icon">±</span>
+      <span class="card-title">Even / Odd Identities</span>
+    </div>
+    <div class="card-body">
+      <div class="eq-row">
+        <span class="eq-label">Even (cos, sec)</span>
+        <span class="eq-formula">cos(−θ) = <span class="hl">cos θ</span> &nbsp;&nbsp;&nbsp;sec(−θ) = <span class="hl">sec θ</span></span>
+      </div>
+      <div class="eq-row">
+        <span class="eq-label">Odd (sin, csc)</span>
+        <span class="eq-formula">sin(−θ) = <span class="hl">−sin θ</span> &nbsp;&nbsp;&nbsp;csc(−θ) = <span class="hl">−csc θ</span></span>
+      </div>
+      <div class="eq-row">
+        <span class="eq-label">Odd (tan, cot)</span>
+        <span class="eq-formula">tan(−θ) = <span class="hl">−tan θ</span> &nbsp;&nbsp;&nbsp;cot(−θ) = <span class="hl">−cot θ</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Co-function -->
+  <div class="card" id="cofunction">
+    <div class="card-header teal">
+      <span class="card-icon">🔀</span>
+      <span class="card-title">Co-function Identities &nbsp;<span style="font-weight:400;color:var(--muted)">(complement = π/2 − θ)</span></span>
+    </div>
+    <div class="card-body">
+      <div class="eq-row">
+        <span class="eq-label">sin / cos</span>
+        <span class="eq-formula">sin θ = <span class="hl">cos(π/2 − θ)</span> &nbsp;&nbsp;&nbsp;cos θ = <span class="hl">sin(π/2 − θ)</span></span>
+      </div>
+      <div class="eq-row">
+        <span class="eq-label">tan / cot</span>
+        <span class="eq-formula">tan θ = <span class="hl">cot(π/2 − θ)</span> &nbsp;&nbsp;&nbsp;cot θ = <span class="hl">tan(π/2 − θ)</span></span>
+      </div>
+      <div class="eq-row">
+        <span class="eq-label">sec / csc</span>
+        <span class="eq-formula">sec θ = <span class="hl">csc(π/2 − θ)</span> &nbsp;&nbsp;&nbsp;csc θ = <span class="hl">sec(π/2 − θ)</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── QUICK SUMMARY ──────────────────────────────────────────────────────── -->
+  <div class="ch-heading" id="summary" style="margin-top:3rem;">
+    <span class="ch-badge ch1">⚡ Quick Reference</span>
+    <h2 class="ch-title">Summary</h2>
+  </div>
+
+  <div class="summary-grid">
+    <div class="summary-item">
+      <p class="summary-item-label">Reciprocal</p>
+      <p class="summary-item-eqs">
+        csc = <span>1/sin</span><br>
+        sec = <span>1/cos</span><br>
+        cot = <span>1/tan</span>
+      </p>
+    </div>
+    <div class="summary-item">
+      <p class="summary-item-label">Quotient</p>
+      <p class="summary-item-eqs">
+        tan = <span>sin/cos</span><br>
+        cot = <span>cos/sin</span>
+      </p>
+    </div>
+    <div class="summary-item">
+      <p class="summary-item-label">Pythagorean</p>
+      <p class="summary-item-eqs">
+        <span>sin²θ + cos²θ = 1</span><br>
+        1 + tan²θ = sec²θ<br>
+        1 + cot²θ = csc²θ
+      </p>
+    </div>
+    <div class="summary-item">
+      <p class="summary-item-label">Even / Odd</p>
+      <p class="summary-item-eqs">
+        Even: <span>cos, sec</span><br>
+        Odd: <span>sin, tan, csc, cot</span>
+      </p>
+    </div>
+    <div class="summary-item">
+      <p class="summary-item-label">Co-function Rule</p>
+      <p class="summary-item-eqs">
+        f(θ) = <span>co-f(π/2 − θ)</span><br>
+        for all 6 trig functions
+      </p>
+    </div>
+    <div class="summary-item">
+      <p class="summary-item-label">Arc / Area</p>
+      <p class="summary-item-eqs">
+        s = <span>rθ</span> &nbsp;&nbsp; A = <span>½r²θ</span><br>
+        v = <span>rω</span> &nbsp;&nbsp; ω = <span>θ/t</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- ASTC Quadrant Signs -->
+  <div class="card" style="margin-top:1.2rem;">
+    <div class="card-header teal">
+      <span class="card-icon">🧭</span>
+      <span class="card-title">Quadrant Sign Rules — "All Students Take Calculus"</span>
+    </div>
+    <div class="card-body">
+      <div class="astc-grid">
+        <div class="astc-cell q2">
+          <p class="q-label">Quadrant II</p>
+          <p class="q-name">Students</p>
+          <p class="q-pos">sin (+) &nbsp;|&nbsp; cos, tan (−)</p>
+        </div>
+        <div class="astc-cell q1">
+          <p class="q-label">Quadrant I</p>
+          <p class="q-name">All</p>
+          <p class="q-pos">sin, cos, tan all (+)</p>
+        </div>
+        <div class="astc-cell q3">
+          <p class="q-label">Quadrant III</p>
+          <p class="q-name">Take</p>
+          <p class="q-pos">tan (+) &nbsp;|&nbsp; sin, cos (−)</p>
+        </div>
+        <div class="astc-cell q4">
+          <p class="q-label">Quadrant IV</p>
+          <p class="q-name">Calculus</p>
+          <p class="q-pos">cos (+) &nbsp;|&nbsp; sin, tan (−)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  Trigonometry · Chapters 1 &amp; 2 Equation Sheet &nbsp;·&nbsp; All identities assume real-valued θ &nbsp;·&nbsp; θ measured from positive x-axis
+</footer>
+
+</body>
+</html>
